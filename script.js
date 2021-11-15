@@ -13,7 +13,21 @@ function sketchCanvas() {
     const cells = document.querySelectorAll(".grid-item");
     cells.forEach((cell) => {
         cell.addEventListener('mouseover', () => {
-            cell.classList.add("hovered");
+            cell.style.setProperty('background-color', 'black');
+        });
+    });
+}
+
+function generateColor() {
+    let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+    return randomColor;
+}
+
+function rainbowCanvas() {
+    const cells = document.querySelectorAll(".grid-item");
+    cells.forEach((cell) => {
+        cell.addEventListener('mouseover', () => {
+            cell.style.setProperty('background-color', generateColor());
         });
     });
 }
@@ -22,7 +36,7 @@ function eraseCanvas() {
     const cells = document.querySelectorAll(".grid-item");
     cells.forEach((cell) => {
         cell.addEventListener('mouseover', () => {
-            cell.classList.remove("hovered");
+            cell.style.setProperty('background-color', 'white');
         });
     });
 }
@@ -33,6 +47,7 @@ const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         if (button.id == "sketch") sketchCanvas();
+        else if (button.id == "rainbow") rainbowCanvas();
         else if (button.id == "erase") eraseCanvas();
     });
 });
