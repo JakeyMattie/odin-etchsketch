@@ -10,3 +10,11 @@ function makeGrid(rowCol) {
 };
 
 makeGrid(16);
+
+const cells = document.querySelectorAll(".grid-item");
+cells.forEach((cell) => {
+    cell.addEventListener('mouseover', () => {
+        cell.classList.add("hovered");
+    });
+});
+
