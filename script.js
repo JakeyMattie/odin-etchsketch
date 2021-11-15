@@ -1,4 +1,4 @@
-const container = document.getElementById("container");
+const container = document.querySelector("#grid-container");
 
 function makeGrid(rowCol) {
   container.style.setProperty('--grid-rows', rowCol);
@@ -9,12 +9,30 @@ function makeGrid(rowCol) {
   };
 };
 
+function sketchCanvas() {
+    const cells = document.querySelectorAll(".grid-item");
+    cells.forEach((cell) => {
+        cell.addEventListener('mouseover', () => {
+            cell.classList.add("hovered");
+        });
+    });
+}
+
+function eraseCanvas() {
+    const cells = document.querySelectorAll(".grid-item");
+    cells.forEach((cell) => {
+        cell.addEventListener('mouseover', () => {
+            cell.classList.remove("hovered");
+        });
+    });
+}
+
 makeGrid(16);
 
-const cells = document.querySelectorAll(".grid-item");
-cells.forEach((cell) => {
-    cell.addEventListener('mouseover', () => {
-        cell.classList.add("hovered");
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        if (button.id == "sketch") sketchCanvas();
+        else if (button.id == "erase") eraseCanvas();
     });
 });
-

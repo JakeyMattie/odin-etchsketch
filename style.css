@@ -3,7 +3,27 @@
     --grid-rows: 1;
 }
 
-#container {
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#main-container {
+    display: flex;
+    width: 1000px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    justify-content: space-around;
+}
+
+#grid-container {
     display: grid;
     width: 500px;
     height: 500px;
