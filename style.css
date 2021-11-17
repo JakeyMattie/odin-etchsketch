@@ -7,6 +7,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -16,6 +17,8 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+/* ========== CONTAINERS */
 
 #main-container {
     display: flex;
@@ -37,6 +40,43 @@ body {
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     border: 5px solid black;
+}
+
+/* ========== BUTTONS */
+
+button {
+    letter-spacing: 2px;
+    padding: 0.75em 0;
+    border: none;
+}
+
+button:focus {
+    font-weight: 700;
+}
+
+#clearBtn:active,
+#sketchBtn:focus {
+    background-color: black;
+    color: white;
+}
+
+#rainbowBtn:focus {
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, 
+            rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, 
+            rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgb(110, 5, 148) 80%, 
+            rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%);
+    color: white;
+    text-shadow: 1px 1px 3px black;
+}
+
+#gradientBtn:focus {
+    background: linear-gradient(90deg, rgba(0,0,0,20%), rgba(0,0,0,40%), rgba(0,0,0,60%), rgba(0,0,0,80%), rgba(0,0,0,100%));
+    color: white;
+}
+
+#eraseBtn:focus {
+    background-color: white;
+    color: black;
 }
 
 .grid-item {
