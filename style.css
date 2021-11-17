@@ -9,17 +9,24 @@
     margin: 0;
 }
 
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #main-container {
     display: flex;
-    width: 1000px;
-    margin: 0 auto;
+    width: 800px;
     justify-content: space-between;
 }
 
 #button-container {
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: 200px;
     justify-content: space-around;
 }
 
