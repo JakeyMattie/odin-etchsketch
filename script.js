@@ -80,7 +80,14 @@ function clearCanvas() { //Sets the canvas to white first before resets with a n
         cell.style.setProperty('background-color', 'white');
     });
 
-    let input = prompt("Enter your grid size: ");
+    let input = 0;
+    do {
+        input = prompt("Enter your grid size (1-100): ");
+
+        if ((input<1) || (input>100)) alert("Please enter a number between 1 to 100.");
+        else break;
+    }while (input<1 || input>100);
+
     makeGrid(input);
 }
 
